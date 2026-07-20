@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon Says Game</title>
-    <link rel="stylesheet"href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b19">
+  <title>Simon &amp;mdash; Memory Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Simon Says Game</h1>    
-    <h2>Press any Key to Start the Game</h2>
-    <div class="btn-container">
-        <div class="line-one">
-            <div class="btn red"type="button"id="red">1</div>
-            <div class="btn yellow"type="button"id="yellow">2</div>
+  <main class="game-shell">
+    <header class="hero">
+      <p class="eyebrow"><span></span> MEMORY CHALLENGE</p>
+      <h1>SIMON<span>&amp;deg;</span></h1>
+      <p class="tagline">Watch the sequence. Repeat it perfectly.</p>
+    </header>
+    <section class="game-card" aria-label="Simon game">
+      <div class="game-top">
+        <div class="score-block"><span>LEVEL</span><strong id="level">00</strong></div>
+        <div class="status-wrap">
+          <div class="status-light" id="statusLight"></div>
+          <p id="status" aria-live="polite">READY TO PLAY</p>
         </div>
-       <div class="line-two">
-        <div class="btn green"type="button"id="green">3</div>
-        <div class="btn purple"type="button"id="purple">4</div>
-       </div>
-    </div>
-    <script src="app.js"></script>
+        <div class="score-block"><span>BEST</span><strong id="best">00</strong></div>
+      </div>
+      <div class="simon-board" aria-label="Simon color buttons">
+        <button class="pad pad-green" data-color="green" aria-label="Green"></button>
+        <button class="pad pad-red" data-color="red" aria-label="Red"></button>
+        <button class="pad pad-yellow" data-color="yellow" aria-label="Yellow"></button>
+        <button class="pad pad-blue" data-color="blue" aria-label="Blue"></button>
+        <div class="center-disc" aria-hidden="true"><span>SIMON</span><i></i></div>
+      </div>
+      <button class="start-btn" id="startButton"><span class="play-icon">&#9654;</span> START GAME</button>
+      <p class="helper" id="helper">Tap start or press any key</p>
+    </section>
+    <p class="hint"><kbd>TIP</kbd> Use your eyes, then trust your memory.</p>
+  </main>
+  <script src="app.js"></script>
 </body>
+
 </html>
